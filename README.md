@@ -51,6 +51,15 @@ leaders.sporttech.sk.ru  →  leaders-awards-st-sk-2026.gosymbol.ru  →  andrei
 
 SSH: `ssh TW_reverse_proxy` (ключ `~/.ssh/timeweb_rproxy_ed25519`)
 
+**SSL для `leaders.sporttech.sk.ru`:** сертификат Let's Encrypt нельзя выпустить, пока домен не резолвится (сейчас NXDOMAIN). На RP настроен cron каждые 2 часа — ` /opt/scripts/enable-leaders-sk-ssl.sh` автоматически выпустит cert и включит HTTPS-редirect, как только Сколково создаст запись:
+
+```
+leaders.sporttech.sk.ru  CNAME  leaders-awards-st-sk-2026.gosymbol.ru
+# или  A  77.233.223.195
+```
+
+Чтобы ускорить: Сколково может создать DNS-запись заранее (до публичного анонса) — SSL подтянется автоматически в течение 2 часов.
+
 ### nginx / Docker (альтернатива)
 
 ```nginx
