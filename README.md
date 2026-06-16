@@ -24,9 +24,14 @@ npx serve public
 
 ## Деплой
 
-Document root — папка `public/`. Подходит для nginx, Caddy, GitHub Pages, Vercel Static, S3.
+Автодеплой на **GitHub Pages** при push в `main`.
 
-### nginx (пример)
+- Репозиторий: https://github.com/AndreiAvvak/stand-by
+- Сайт: https://andreiawvak.github.io/stand-by/
+
+Workflow: `.github/workflows/pages.yml` — публикует содержимое `public/`.
+
+### nginx / Docker (альтернатива)
 
 ```nginx
 server {
