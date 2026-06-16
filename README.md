@@ -31,6 +31,26 @@ npx serve public
 
 Workflow: `.github/workflows/pages.yml` — публикует содержимое `public/`.
 
+### Reverse proxy (gosymbol.ru)
+
+Технический домен проксируется через `TW_reverse_proxy` (77.233.223.195):
+
+| Домен | Назначение |
+|-------|-----------|
+| `leaders-awards-st-sk-2026.gosymbol.ru` | HTTPS → GitHub Pages stand-by |
+| `leaders.sporttech.sk.ru` | CNAME → gosymbol-домен (настраивает Сколково) |
+
+Конфиг nginx: `nginx/leaders-standby-proxy.conf`
+
+Цепочка:
+
+```
+leaders.sporttech.sk.ru  →  leaders-awards-st-sk-2026.gosymbol.ru  →  andreiavvak.github.io/stand-by/
+     (Сколково DNS)              (TW_reverse_proxy)                        (GitHub Pages)
+```
+
+SSH: `ssh TW_reverse_proxy` (ключ `~/.ssh/timeweb_rproxy_ed25519`)
+
 ### nginx / Docker (альтернатива)
 
 ```nginx
