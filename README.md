@@ -27,7 +27,7 @@ npx serve public
 Автодеплой на **GitHub Pages** при push в `main`.
 
 - Репозиторий: https://github.com/AndreiAvvak/stand-by
-- Сайт: https://andreiawvak.github.io/stand-by/
+- Сайт: https://andreiavvak.github.io/stand-by/
 
 Workflow: `.github/workflows/pages.yml` — публикует содержимое `public/`.
 
