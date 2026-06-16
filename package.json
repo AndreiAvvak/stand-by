@@ -1,0 +1,13 @@
+{
+  "name": "stand-by",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Микро-сайт-заглушка Symbol — Please Stand By",
+  "scripts": {
+    "dev": "npx serve public -p 4321",
+    "preview": "npx serve public -p 4321",
+    "deploy": "vercel --prod --yes"
+  },
+  "devDependencies": {
+    "vercel": "^44.2.7"
+  }

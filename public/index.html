@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Please Stand By — Symbol</title>
+    <meta
+      name="description"
+      content="Раздел в разработке. Скоро здесь появится что-то новое."
+    />
+    <meta property="og:title" content="Please Stand By — Symbol" />
+    <meta
+      property="og:description"
+      content="Раздел в разработке. Скоро здесь появится что-то новое."
+    />
+    <meta property="og:image" content="/stand-by-pattern.png" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/stand-by.svg" as="image" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="stage" aria-live="polite">
+      <div class="crt" role="presentation">
+        <div class="crt__bezel">
+          <div class="crt__screen">
+            <img
+              class="crt__picture"
+              src="/stand-by.svg"
+              alt="Please Stand By — телевизионный тестовый паттерн"
+              width="800"
+              height="600"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <div class="crt__scanlines" aria-hidden="true"></div>
+            <div class="crt__flicker" aria-hidden="true"></div>
+          </div>
+          <div class="crt__indicator" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <footer class="meta">
+        <p class="meta__brand">Symbol</p>
+        <p class="meta__note">Раздел в разработке</p>
+      </footer>
+    </main>
+
+    <noscript>
+      <style>
+        .crt__scanlines,
+        .crt__flicker {
+          display: none;
+        }
+      </style>
+    </noscript>
+  </body>
+</html>
